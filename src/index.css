@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-primary: #0a0a0a;
+  --color-accent: #ff6b00; /* Orange glow */
+  --color-accent-neon: #00f2ff; /* Neon highlight */
+}
+
+@layer base {
+  * {
+    @apply border-white/10;
+    cursor: none !important; /* Hide default cursor for custom cursor system */
+  }
+
+  body {
+    @apply bg-primary text-white font-sans antialiased selection:bg-accent/30 selection:text-white;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(255, 107, 0, 0.3);
+  }
+
+  .bg-mesh {
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(255, 107, 0, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(0, 242, 255, 0.1) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(255, 107, 0, 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(0, 242, 255, 0.1) 0px, transparent 50%);
+  }
+}
+
+/* Lenis smooth scroll styles */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+@theme {
+  --color-accent: #ff6b00;
+  --font-display: "Inter", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+}
+
+:root {
+  background-color: #020202;
+  color: white;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
